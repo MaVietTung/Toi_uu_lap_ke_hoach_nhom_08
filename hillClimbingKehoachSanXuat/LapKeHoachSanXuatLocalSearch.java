@@ -68,10 +68,12 @@ public class LapKeHoachSanXuatLocalSearch {
             y[m.i].setValuePropagate(m.v);
             it++;
         }
-        System.out.print("Giai phap "+c.violations()+" violations, loi nhuan "+ muctieu.getValue() + ": ");
+        int S = 0;
         for(int i=0;i<y.length;i++){
             bestSolution[y[i].getID()] = y[i].getValue();
+            S += y[i].getValue() * f[y[i].getID()];
         }
+        System.out.print("Giai phap "+c.violations()+" violations, loi nhuan "+ S + ": ");
         for(int i =0 ;i<y.length;i++){
             System.out.print(bestSolution[i]);
             System.out.print(' ');
